@@ -1,0 +1,123 @@
+1. El total de ordenes del cliente con el ID 3
+
+sqlite> SELECT count (CustomerID) FROM Orders WHERE CustomerID = 3;
+count (CustomerID)
+------------------
+6
+
+==========================================================================================  
+2. El total de ordenes del cliente con el ContactName igual a 'Jim Wood'
+
+sqlite> SELECT count (OrderID) FROM Orders
+   ...> WHERE
+   ...> CustomerID = (SELECT CustomerID FROM Customers Where ContactName = 'Jim Wood');
+count (OrderID)
+---------------
+6              
+
+==========================================================================================
+3. El total de ordenes del cliente con CompanyName igual a 'Slots Carpet'
+
+sqlite> SELECT count (OrderID) FROM Orders
+   ...> WHERE
+   ...> CustomerID = (SELECT CustomerID FROM Customers Where CompanyName = 'Slots Carpet');
+count (OrderID)
+---------------
+2  
+
+==========================================================================================
+4. El total de ordenes de cada compañía ordenado de manera descendente
+
+SELECT Customers.CompanyName, count(Orders.OrderID) as Total_Orders
+FROM Orders 
+INNER JOIN Customers ON Orders.CustomerID = Customers.CustomerID
+GROUP BY Customers.CompanyName
+Order by Total_Orders desc;
+
+==========================================================================================
+5. El total de ordenes de cada compañía ordenado de manera ascendente
+
+SELECT Customers.CompanyName, count(Orders.OrderID) as Total_Orders
+FROM Orders 
+INNER JOIN Customers ON Orders.CustomerID = Customers.CustomerID
+GROUP BY Customers.CompanyName
+Order by Total_Orders asc;
+
+==========================================================================================
+6. La compañía con el mayor número de ordenes
+
+SELECT Customers.CompanyName, count(Orders.OrderID) as Total_Orders
+FROM Orders 
+INNER JOIN Customers ON Orders.CustomerID = Customers.CustomerID
+GROUP BY Customers.CompanyName
+Order by Total_Orders desc
+Limit 1;
+
+==========================================================================================
+7. La suma total de piezas que fueron ordenadas por cada compañía.
+
+SELECT Customers.CompanyName, Sum(Quantity) as Piezas
+FROM Orders
+JOIN Customers ON Orders.CustomerID = Customers.CustomerID
+JOIN OrderDetails ON Orders.OrderID = OrderDetails.OrderID
+GROUP BY Customers.CompanyName
+ORDER BY Piezas DESC; 
+==========================================================================================
+8. El monto total en pesos de la orden con ID 4
+
+SELECT OrderId, Quantity*UnitPrice as TOTAL
+FROM OrderDetails
+WHERE OrderId=4;
+
+==========================================================================================
+9. El monto total en pesos de cada orden
+
+SELECT OrderID, SUM(Quantity*UnitPrice) as TOTAL
+FROM OrderDetails
+GROUP BY OrderID;
+
+==========================================================================================
+10. La consulta del inciso anterior pero únicamente mostrando aquellas ordenes que sean 
+mayores a $1,000.00 pesos
+
+SELECT OrderID, SUM(Quantity*UnitPrice) as TOTAL
+FROM OrderDetails 
+GROUP BY OrderID
+HAVING SUM(Quantity*UnitPrice) > 1000;
+
+==========================================================================================
+11. El total de piezas en cada orden
+
+SELECT OrderID, SUM(Quantity) as TOTAL
+FROM OrderDetails 
+GROUP BY OrderID;
+
+==========================================================================================
+
+Select CompanyName,OrderDate
+From Orders
+Join Customers On Customers.CustomerID=Orders.CustomerID
+Where CompanyName = “MI empresa”;
+
+UPDATE Orders SET CustomerID = 6 
+WHERE OrderDate in (Select OrderDate
+                      From Orders
+                      Join Customers On Customers.CustomerID=Orders.CustomerID
+                      Where CompanyName = "Floor Co." and OrderDate like "%2013%" ); 
+
+==========================================================================================
+
+DELETE FROM OrderDetails 
+WHERE OrderID IN (Select OrderID 
+From Customers
+Join Orders ON Customers.CustomerID = Orders.CustomerID
+Where CompanyName = "Slots Carpet”);
+
+DELETE FROM Orders
+WHERE OrderID IN (Select OrderID 
+From Customers
+Join Orders ON Customers.CustomerID = Orders.CustomerID
+Where CompanyName = "Slots Carpet”)
+
+DELETE FROM Customers Where CompanyName = "Slots Carpet"
+

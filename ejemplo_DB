@@ -1,0 +1,528 @@
+Last login: Mon Oct  3 08:39:36 on ttys000
+CodeaCamp06s-Mac-mini:~ codea_mac_06$ cd desktop/pairprogramming
+CodeaCamp06s-Mac-mini:pairprogramming codea_mac_06$ ruby store.rb
+
+Welcome to the online store:
+-------------------------------------------------------------------
+
+  Select option number:
+
+  1. Login
+  2. Register
+  3. Vendedor
+  4. Exit 
+
+2
+
+You have selected option '2'
+
+User name: pruebafinal 
+
+Password: 
+Congratulations!! Successful Registration
+
+Welcome to the online store:
+-------------------------------------------------------------------
+
+  Select option number:
+
+  1. Login
+  2. Register
+  3. Vendedor
+  4. Exit 
+
+1
+
+You have selected option '1'
+
+User name: pruebafinal
+
+Password: 
+
+Pruebafinal, welcome to the online store: Your type is Client.
+-------------------------------------------------------------------
+
+    Select option number:
+
+    1. Logout
+    2. Products
+    3. Shopping Cart
+
+2
+
+You have selected option '2'
+2
+
+Product: 'sandia'
+
+    Quantity?
+1
+...
+Successful added 1 of product: 'sandia'
+
+
+Pruebafinal, welcome to the online store: Your type is Client.
+-------------------------------------------------------------------
+
+    Select option number:
+
+    1. Logout
+    2. Products
+    3. Shopping Cart
+
+2
+
+You have selected option '2'
+1
+
+Product: 'manzana'
+
+    Quantity?
+1
+...
+Successful added 1 of product: 'manzana'
+
+
+Pruebafinal, welcome to the online store: Your type is Client.
+-------------------------------------------------------------------
+
+    Select option number:
+
+    1. Logout
+    2. Products
+    3. Shopping Cart
+
+1
+
+You have selected option '1'
+
+
+ Pruebafinal, you have successfully logged out, goodbye!
+.
+.
+.
+
+Welcome to the online store:
+-------------------------------------------------------------------
+
+  Select option number:
+
+  1. Login
+  2. Register
+  3. Vendedor
+  4. Exit 
+
+4
+
+You have selected option '4'
+
+
+You have exited the store, goodbye!
+
+CodeaCamp06s-Mac-mini:pairprogramming codea_mac_06$ ruby store.rb
+
+Welcome to the online store:
+-------------------------------------------------------------------
+
+  Select option number:
+
+  1. Login
+  2. Register
+  3. Vendedor
+  4. Exit 
+
+1
+
+You have selected option '1'
+
+User name: max
+
+Password: 
+
+Max, welcome to the online store: Your type is Client.
+-------------------------------------------------------------------
+
+    Select option number:
+
+    1. Logout
+    2. Products
+    3. Shopping Cart
+
+2
+
+You have selected option '2'
+
+Products:
+-------------------------------------------------------------------
+== 'Product' == 'Available Quantity' == 'Price per unit' 
+
+1.  manzana ==          3               ==      $ 10        
+2.  sandia  ==          3               ==      $ 25        
+3.  mango   ==          10              ==      $ 15        
+4.  platano ==          50              ==      $ 3         
+5.  guayaba ==          12              ==      $ 5         
+
+Put the number of the item you wish to add to your shopping cart.
+     Or type 'back' to go back to the main menu. 
+
+1
+
+Product: 'manzana'
+
+    Quantity?
+3
+...
+Successful added 3 of product: 'manzana'
+
+
+Max, welcome to the online store: Your type is Client.
+-------------------------------------------------------------------
+
+    Select option number:
+
+    1. Logout
+    2. Products
+    3. Shopping Cart
+
+
+
+You have selected option '0'
+
+Sorry about the inconvenience, site still under development.
+...
+
+Max, welcome to the online store: Your type is Client.
+-------------------------------------------------------------------
+
+    Select option number:
+
+    1. Logout
+    2. Products
+    3. Shopping Cart
+
+3
+
+You have selected option '3'
+...
+Products:
+-------------------------------------------------------------------
+== 'Product' == 'Quantity' == 'Total price' 
+
+1.  manzana  ==       3     ==      $ 30   
+
+
+Max:
+-------------------------------------------------------------------
+
+    Please select option number:
+
+    1. Back
+    2. Delete Product
+
+2
+
+ Choose the number of the item you wish to delete or type 'back' to go BACK
+1
+
+ You have deleted 3 manzana
+
+Sorry! No products available in your cart at this time, add some products!
+...
+
+Max, welcome to the online store: Your type is Client.
+-------------------------------------------------------------------
+
+    Select option number:
+
+    1. Logout
+    2. Products
+    3. Shopping Cart
+
+1
+
+You have selected option '1'
+
+
+ Max, you have successfully logged out, goodbye!
+.
+.
+.
+
+Welcome to the online store:
+-------------------------------------------------------------------
+
+  Select option number:
+
+  1. Login
+  2. Register
+  3. Vendedor
+  4. Exit 
+
+4
+
+You have selected option '4'
+
+
+You have exited the store, goodbye!
+
+CodeaCamp06s-Mac-mini:pairprogramming codea_mac_06$ git add .
+CodeaCamp06s-Mac-mini:pairprogramming codea_mac_06$ git commit -m
+error: switch `m' requires a value
+usage: git commit [<options>] [--] <pathspec>...
+
+    -q, --quiet           suppress summary after successful commit
+    -v, --verbose         show diff in commit message template
+
+Commit message options
+    -F, --file <file>     read message from file
+    --author <author>     override author for commit
+    --date <date>         override date for commit
+    -m, --message <message>
+                          commit message
+    -c, --reedit-message <commit>
+                          reuse and edit message from specified commit
+    -C, --reuse-message <commit>
+                          reuse message from specified commit
+    --fixup <commit>      use autosquash formatted message to fixup specified commit
+    --squash <commit>     use autosquash formatted message to squash specified commit
+    --reset-author        the commit is authored by me now (used with -C/-c/--amend)
+    -s, --signoff         add Signed-off-by:
+    -t, --template <file>
+                          use specified template file
+    -e, --edit            force edit of commit
+    --cleanup <default>   how to strip spaces and #comments from message
+    --status              include status in commit message template
+    -S, --gpg-sign[=<key-id>]
+                          GPG sign commit
+
+Commit contents options
+    -a, --all             commit all changed files
+    -i, --include         add specified files to index for commit
+    --interactive         interactively add files
+    -p, --patch           interactively add changes
+    -o, --only            commit only specified files
+    -n, --no-verify       bypass pre-commit hook
+    --dry-run             show what would be committed
+    --short               show status concisely
+    --branch              show branch information
+    --porcelain           machine-readable output
+    --long                show status in long format (default)
+    -z, --null            terminate entries with NUL
+    --amend               amend previous commit
+    --no-post-rewrite     bypass post-rewrite hook
+    -u, --untracked-files[=<mode>]
+                          show untracked files, optional modes: all, normal, no. (Default: all)
+
+CodeaCamp06s-Mac-mini:pairprogramming codea_mac_06$ git commit -m "On line store termindado"
+[master a139e77] On line store termindado
+ 6 files changed, 179 insertions(+), 26 deletions(-)
+CodeaCamp06s-Mac-mini:pairprogramming codea_mac_06$ git push max
+maxUsername for 'https://github.com': olac
+Password for 'https://maxolac@github.com': 
+Counting objects: 8, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (7/7), done.
+Writing objects: 100% (8/8), 1.66 KiB | 0 bytes/s, done.
+Total 8 (delta 4), reused 0 (delta 0)
+remote: Resolving deltas: 100% (4/4), completed with 4 local objects.
+To https://github.com/MaxOlac/PairProgramming.git
+   40c6772..a139e77  master -> master
+CodeaCamp06s-Mac-mini:pairprogramming codea_mac_06$ git push rodrigo
+Username for 'https://github.com': rosdelac
+Password for 'https://rosdelac@github.com': 
+Counting objects: 15, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (13/13), done.
+Writing objects: 100% (15/15), 2.61 KiB | 0 bytes/s, done.
+Total 15 (delta 8), reused 0 (delta 0)
+remote: Resolving deltas: 100% (8/8), completed with 4 local objects.
+To https://github.com/rosdelac/PairProgramming.git
+   f5ce76a..a139e77  master -> master
+CodeaCamp06s-Mac-mini:pairprogramming codea_mac_06$ clear
+
+CodeaCamp06s-Mac-mini:pairprogramming codea_mac_06$ cd ..
+CodeaCamp06s-Mac-mini:desktop codea_mac_06$ cd DB
+CodeaCamp06s-Mac-mini:DB codea_mac_06$ git init
+Initialized empty Git repository in /Users/codea_mac_06/Desktop/DB/.git/
+CodeaCamp06s-Mac-mini:DB codea_mac_06$ git ls -a
+git: 'ls' is not a git command. See 'git --help'.
+
+Did you mean this?
+	log
+CodeaCamp06s-Mac-mini:DB codea_mac_06$ ls
+CodeaCamp06s-Mac-mini:DB codea_mac_06$ ls -a
+.	..	.git
+CodeaCamp06s-Mac-mini:DB codea_mac_06$ git add README.md
+fatal: pathspec 'README.md' did not match any files
+CodeaCamp06s-Mac-mini:DB codea_mac_06$ git remmot
+git: 'remmot' is not a git command. See 'git --help'.
+
+Did you mean this?
+	remote
+CodeaCamp06s-Mac-mini:DB codea_mac_06$ git rem
+git: 'rem' is not a git command. See 'git --help'.
+
+Did you mean one of these?
+	grep
+	remote
+	rm
+CodeaCamp06s-Mac-mini:DB codea_mac_06$ git remote
+CodeaCamp06s-Mac-mini:DB codea_mac_06$ git remote add max https://github.com/MaxOlac/DB.git
+CodeaCamp06s-Mac-mini:DB codea_mac_06$ git status
+On branch master
+
+Initial commit
+
+nothing to commit (create/copy files and use "git add" to track)
+CodeaCamp06s-Mac-mini:DB codea_mac_06$ clear
+
+CodeaCamp06s-Mac-mini:DB codea_mac_06$ cat << EOF > ~/.sqliterc
+> .headers on
+> .mode column
+> EOF
+CodeaCamp06s-Mac-mini:DB codea_mac_06$ sqlite3 ejemplo.db
+-- Loading resources from /Users/codea_mac_06/.sqliterc
+
+SQLite version 3.8.5 2014-08-15 22:37:57
+Enter ".help" for usage hints.
+sqlite> CREATE TABLO usuarios(
+   ...> id INTEGER PRIMARY KEY AUTOINCREMENT,
+   ...> nombre VARCHAR(64) NO NULL,
+   ...> apellido VARCHAR(64) NOT NULL,
+   ...> email VARCHAR(128) UNIQUE NOT NULL,
+   ...> fecha_naciemento DATETIME NOT NULL,
+   ...> genero VARCHAR(10) NOT NULL
+   ...> );
+Error: near "TABLO": syntax error
+sqlite> CREATE TABLE usuarios(
+   ...> id INTEGER PRIMARY KEY AUTOINCREMENT,
+   ...> nombre VARCHAR(64) NO NULL,
+   ...> apellido VARCHAR(64) NOT NULL,
+   ...> email VARCHAR(128) UNIQUE NOT NULL,
+   ...> fecha_naciemento DATETIME NOT NULL,
+   ...> genero VARCHAR(10) NOT NULL
+   ...> );
+Error: near "NO": syntax error
+sqlite> CREATE TABLE usuarios (
+   ...>   id INTEGER PRIMARY KEY AUTOINCREMENT,
+   ...>   nombre VARCHAR(64) NOT NULL,
+   ...>   apellido  VARCHAR(64) NOT NULL,
+   ...>   email VARCHAR(128) UNIQUE NOT NULL,
+   ...>   fecha_nacimiento DATETIME NOT NULL,
+   ...>   genero VARCHAR(10) NOT NULL
+   ...> );
+sqlite> INSERT INTO usuarios
+   ...> (nombre, apellido, email, fecha_nacimiento, genero)
+   ...> VALUES
+   ...> ('Carlos', 'Ribero', 'carlos@yahoo.com', '1970-11-03', 'masculino');
+sqlite> SELECT * FROM usuarios
+   ...> ;
+id          nombre      apellido    email             fecha_nacimiento  genero    
+----------  ----------  ----------  ----------------  ----------------  ----------
+1           Carlos      Ribero      carlos@yahoo.com  1970-11-03        masculino 
+sqlite> INSERT INTO usuarios
+   ...> (nombre, apellido, email, fecha_nacimiento, genero)
+   ...> VALUES
+   ...> ('Maximiliano', 'Olac', 'molac.far@gmail.com','1992-12-09', 'masculino')
+   ...> ;
+sqlite> SELECT * FROM usuarios
+   ...> ;
+id          nombre      apellido    email             fecha_nacimiento  genero    
+----------  ----------  ----------  ----------------  ----------------  ----------
+1           Carlos      Ribero      carlos@yahoo.com  1970-11-03        masculino 
+2           Maximilian  Olac        molac.far@gmail.  1992-12-09        masculino 
+sqlite> SELECT nombre FROM usuarios;
+nombre    
+----------
+Carlos    
+Maximilian
+sqlite> INSERT INTO usuarios
+   ...>  (nombre, apellido, email, fecha_nacimiento, genero)
+   ...>  VALUES
+   ...>  ('Carlos', 'Ribero', 'carlos@yahoo.com', '1970-11-03', 'masculino');
+Error: UNIQUE constraint failed: usuarios.email
+sqlite> .schema
+CREATE TABLE usuarios (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  nombre VARCHAR(64) NOT NULL,
+  apellido  VARCHAR(64) NOT NULL,
+  email VARCHAR(128) UNIQUE NOT NULL,
+  fecha_nacimiento DATETIME NOT NULL,
+  genero VARCHAR(10) NOT NULL
+);
+sqlite> ALTER TABLE usuarios ADD COLUMN apodo VARCHAR(64) NOT NULL;
+Error: Cannot add a NOT NULL column with default value NULL
+sqlite> ALTER TABLE usuarios ADD COLUMN apodo VARCHAR(64);
+sqlite> .schema
+CREATE TABLE usuarios (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  nombre VARCHAR(64) NOT NULL,
+  apellido  VARCHAR(64) NOT NULL,
+  email VARCHAR(128) UNIQUE NOT NULL,
+  fecha_nacimiento DATETIME NOT NULL,
+  genero VARCHAR(10) NOT NULL
+, apodo VARCHAR(64));
+sqlite> DROP TABLE usuarios
+   ...> ;
+sqlite> SELECT nombre FROM usuarios;
+Error: no such table: usuarios
+sqlite> ;CREATE TABLE usuarios (
+   ...>   id INTEGER PRIMARY KEY AUTOINCREMENT,
+   ...>   nombre VARCHAR(64) NOT NULL,
+   ...>   apellido  VARCHAR(64) NOT NULL,
+   ...>   email VARCHAR(128) UNIQUE NOT NULL,
+   ...>   fecha_nacimiento DATETIME NOT NULL,
+   ...>   genero VARCHAR(10) NOT NULL
+   ...> );
+sqlite> ALTER TABLE usuarios ADD COLUMN apodo VARCHAR(64) NOT NULL;
+Error: Cannot add a NOT NULL column with default value NULL
+sqlite> ALTER TABLE usuarios ADD COLUMN apodo VARCHAR(64);
+sqlite> .schema
+CREATE TABLE usuarios (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  nombre VARCHAR(64) NOT NULL,
+  apellido  VARCHAR(64) NOT NULL,
+  email VARCHAR(128) UNIQUE NOT NULL,
+  fecha_nacimiento DATETIME NOT NULL,
+  genero VARCHAR(10) NOT NULL
+, apodo VARCHAR(64));
+sqlite> INSERT INTO usuarios
+   ...>  (nombre, apellido, email, fecha_nacimiento, genero)
+   ...>  VALUES
+   ...>  ('Carlos', 'Ribero', 'carlos@yahoo.com', '1970-11-03', 'masculino');
+sqlite>  INSERT INTO usuarios
+   ...>  (nombre, apellido, email, fecha_nacimiento, genero)
+   ...>  VALUES
+   ...>  ('Carlos', 'Ribero', 'carlos2@yahoo.com', '1970-11-03', 'masculino');
+sqlite> SELECT * FROM usuarios
+   ...> ,
+   ...> ;
+Error: near ";": syntax error
+sqlite> SELECT * FROM usuarios;
+id          nombre      apellido    email             fecha_nacimiento  genero      apodo     
+----------  ----------  ----------  ----------------  ----------------  ----------  ----------
+1           Carlos      Ribero      carlos@yahoo.com  1970-11-03        masculino             
+2           Carlos      Ribero      carlos2@yahoo.co  1970-11-03        masculino             
+sqlite> UPDATE usuarios SET apodo = 'charly' WHERE id=1
+   ...> ;
+sqlite> UPDATE usuarios SET apodo = 'charly2' WHERE id=2;
+sqlite> SELECT * FROM usuarios;
+id          nombre      apellido    email             fecha_nacimiento  genero      apodo     
+----------  ----------  ----------  ----------------  ----------------  ----------  ----------
+1           Carlos      Ribero      carlos@yahoo.com  1970-11-03        masculino   charly    
+2           Carlos      Ribero      carlos2@yahoo.co  1970-11-03        masculino   charly2   
+sqlite> UPDATE usuarios SET apellido = 'Rivero' and fecha_nacimiento = '1980-11-03' WHERE id=1; 
+sqlite> SELECT * FROM usuarios;                                                                id          nombre      apellido    email             fecha_nacimiento  genero      apodo     
+----------  ----------  ----------  ----------------  ----------------  ----------  ----------
+1           Carlos      0           carlos@yahoo.com  1970-11-03        masculino   charly    
+2           Carlos      Ribero      carlos2@yahoo.co  1970-11-03        masculino   charly2   
+sqlite> UPDATE usuarios SET apellido = 'Rivero', fecha_nacimiento = '1980-11-03' WHERE id=1; 
+sqlite> SELECT * FROM usuarios;
+id          nombre      apellido    email             fecha_nacimiento  genero      apodo     
+----------  ----------  ----------  ----------------  ----------------  ----------  ----------
+1           Carlos      Rivero      carlos@yahoo.com  1980-11-03        masculino   charly    
+2           Carlos      Ribero      carlos2@yahoo.co  1970-11-03        masculino   charly2   
+sqlite> .quite
+Error: unknown command or invalid arguments:  "quite". Enter ".help" for help
+sqlite> .quit
+CodeaCamp06s-Mac-mini:DB codea_mac_06$ 
