@@ -117,7 +117,6 @@ DELETE FROM Orders
 WHERE OrderID IN (Select OrderID 
 From Customers
 Join Orders ON Customers.CustomerID = Orders.CustomerID
-Where CompanyName = "Slots Carpet”)
-
+Where CompanyName = "Slots Carpet”)x
 DELETE FROM Customers Where CompanyName = "Slots Carpet"
 
