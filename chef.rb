@@ -77,7 +77,7 @@ class Chef
     )
 
   end
-  
+
   private
 
   def self.db
