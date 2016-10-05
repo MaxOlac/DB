@@ -1,10 +1,11 @@
 class Meal < MiniActiveRecord::Model
+  #probado
   def self.all
     MiniActiveRecord::Model.execute("SELECT * FROM meals").map do |row|
       Meal.new(row)
     end
   end
-
+  #probado
   def self.create(attributes)
     record = self.new(attributes)
     record.save
@@ -17,8 +18,9 @@ class Meal < MiniActiveRecord::Model
       Meal.new(row)
     end
   end
-
+  #probado
   def self.find(pk)
+
     self.where('id = ?', pk).first
   end
 
@@ -53,6 +55,7 @@ class Meal < MiniActiveRecord::Model
   end
 
   def chef
+    
     Chef.where('id = ?', self[:chef_id])
   end
 
@@ -62,11 +65,12 @@ class Meal < MiniActiveRecord::Model
 
     chef
   end
-
+  #probado
   def new_record?
+
     self[:id].nil?
   end
-
+  #probado
   def save
     if new_record?
       results = insert!
@@ -80,9 +84,8 @@ class Meal < MiniActiveRecord::Model
     results
   end
 
-
   private
-
+  #probado
   def insert!
     self[:created_at] = DateTime.now
     self[:updated_at] = DateTime.now
@@ -99,7 +102,7 @@ class Meal < MiniActiveRecord::Model
     self[:id] = MiniActiveRecord::Model.last_insert_row_id
     results
   end
-
+  #probado
   def update!
     self[:updated_at] = DateTime.now
 

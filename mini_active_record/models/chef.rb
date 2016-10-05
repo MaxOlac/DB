@@ -4,7 +4,7 @@ class Chef < MiniActiveRecord::Model
       Chef.new(row)
     end
   end
-
+  #probado
   def self.create(attributes)
     record = self.new(attributes)
     record.save
@@ -41,7 +41,7 @@ class Chef < MiniActiveRecord::Model
 
     @old_attributes = @attributes.dup
   end
-
+  #probado
   def save
     if new_record?
       results = insert!
@@ -57,21 +57,23 @@ class Chef < MiniActiveRecord::Model
 
   # We say a record is "new" if it doesn't have a defined primary key in its
   # attributes
+  #probado
   def new_record?
+
     self[:id].nil?
   end
 
   # e.g., chef[:first_name] #=> 'Steve'
+  #probado
   def [](attribute)
     raise_error_if_invalid_attribute!(attribute)
-
     @attributes[attribute]
   end
 
   # e.g., chef[:first_name] = 'Steve'
+  #probado
   def []=(attribute, value)
     raise_error_if_invalid_attribute!(attribute)
-
     @attributes[attribute] = value
   end
 
@@ -89,7 +91,7 @@ class Chef < MiniActiveRecord::Model
 
 
   private
-
+  #probado
   def insert!
     self[:created_at] = DateTime.now
     self[:updated_at] = DateTime.now
@@ -106,7 +108,7 @@ class Chef < MiniActiveRecord::Model
     self[:id] = MiniActiveRecord::Model.last_insert_row_id
     results
   end
-
+  #probado
   def update!
     self[:updated_at] = DateTime.now
 
