@@ -1,23 +1,23 @@
 class Chef < MiniActiveRecord::Model
+
   def self.all
+
     super(self,"chefs")
   end
 
   def self.create(attributes)
-    record = self.new(attributes)
-    record.save
 
-    record
+    super(attributes,self)
   end
 
   def self.where(query, *args)
-    MiniActiveRecord::Model.execute("SELECT * FROM chefs WHERE #{query}", *args).map do |row|
-      Chef.new(row)
-    end
+
+    super(query,*args,self,"chefs")
   end
 
   def self.find(pk)
-    self.where('id = ?', pk).first
+
+    super(pk,self)
   end
 
   self.attribute_names = [:id, :first_name, :last_name, :email, :phone,
@@ -32,7 +32,7 @@ class Chef < MiniActiveRecord::Model
 
   def new_record?
 
-    self[:id].nil?
+    super(self)
   end
 
   def meals

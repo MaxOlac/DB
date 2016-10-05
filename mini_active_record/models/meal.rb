@@ -1,25 +1,24 @@
 class Meal < MiniActiveRecord::Model
-  #probado
+  
   def self.all
+
     super(self,"meals")
   end
-  #probado
-  def self.create(attributes)
-    record = self.new(attributes)
-    record.save
+  
 
-    record
+  def self.create(attributes)
+
+    super(attributes,self)
   end
 
   def self.where(query, *args)
-    MiniActiveRecord::Model.execute("SELECT * FROM meals WHERE #{query}", *args).map do |row|
-      Meal.new(row)
-    end
+
+   super(query,*args,self,"meals")
   end
   #probado
   def self.find(pk)
 
-    self.where('id = ?', pk).first
+    super(pk,self)
   end
 
   self.attribute_names = [:id, :name, :chef_id, :created_at, :updated_at]
@@ -45,7 +44,7 @@ class Meal < MiniActiveRecord::Model
   #probado
   def new_record?
 
-    self[:id].nil?
+    super(self)
   end
  
   private
