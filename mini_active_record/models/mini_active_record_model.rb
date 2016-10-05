@@ -151,6 +151,36 @@ module MiniActiveRecord
         value
       end
     end
+    #probado
+    def insert!(this,string)
+      this[:created_at] = DateTime.now
+      this[:updated_at] = DateTime.now
+
+      fields = this.attributes.keys
+      values = this.attributes.values
+      marks  = Array.new(fields.length) { '?' }.join(',')
+
+      insert_sql = "INSERT INTO #{string} (#{fields.join(',')}) VALUES (#{marks})"
+
+      results = MiniActiveRecord::Model.execute(insert_sql, *values)
+
+      # This fetches the new primary key and updates this instance
+      this[:id] = MiniActiveRecord::Model.last_insert_row_id
+      results
+    end
+  #probado
+    def update!(this,string)
+      this[:updated_at] = DateTime.now
+
+      fields = this.attributes.keys
+      values = this.attributes.values
+
+      update_clause = fields.map { |field| "#{field} = ?" }.join(',')
+      update_sql = "UPDATE #{string} SET #{update_clause} WHERE id = ?"
+
+      # We have to use the (potentially) old ID attribute in case the user has re-set it.
+      MiniActiveRecord::Model.execute(update_sql, *values, this.old_attributes[:id])
+    end
 
   end
 
