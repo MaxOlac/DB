@@ -3,6 +3,11 @@ module MiniActiveRecord
   class NotConnectedError < StandardError; end
 
   class Model
+    def self.all(this,string)
+      MiniActiveRecord::Model.execute("SELECT * FROM #{string}").map do |row|
+      this.new(row)
+      end
+    end
 
     def initialize(attributes = {},attribute_names)
       attributes.symbolize_keys!
@@ -13,7 +18,6 @@ module MiniActiveRecord
       attribute_names.each do |name|
       @attributes[name] = attributes[name]
       end
-
       @old_attributes = @attributes.dup
     end
 
@@ -29,6 +33,16 @@ module MiniActiveRecord
       results
     end
 
+    def [](attribute)
+      raise_error_if_invalid_attribute!(attribute)
+
+      @attributes[attribute]
+    end
+
+    def []=(attribute, value)
+      raise_error_if_invalid_attribute!(attribute)
+      @attributes[attribute] = value
+    end
 
     def self.inherited(klass)
     end

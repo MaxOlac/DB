@@ -1,9 +1,7 @@
 class Meal < MiniActiveRecord::Model
   #probado
   def self.all
-    MiniActiveRecord::Model.execute("SELECT * FROM meals").map do |row|
-      Meal.new(row)
-    end
+    super(self,"meals")
   end
   #probado
   def self.create(attributes)
@@ -31,18 +29,6 @@ class Meal < MiniActiveRecord::Model
   def initialize(attributes = {})
 
        super(attributes,Meal.attribute_names)
-  end
-
-  def [](attribute)
-    raise_error_if_invalid_attribute!(attribute)
-
-    @attributes[attribute]
-  end
-
-  def []=(attribute, value)
-    raise_error_if_invalid_attribute!(attribute)
-
-    @attributes[attribute] = value
   end
 
   def chef
