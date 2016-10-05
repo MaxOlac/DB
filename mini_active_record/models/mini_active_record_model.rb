@@ -4,6 +4,32 @@ module MiniActiveRecord
 
   class Model
 
+    def initialize(attributes = {},attribute_names)
+      attributes.symbolize_keys!
+      raise_error_if_invalid_attribute!(attributes.keys)
+
+      @attributes = {}
+
+      attribute_names.each do |name|
+      @attributes[name] = attributes[name]
+      end
+
+      @old_attributes = @attributes.dup
+    end
+
+    def save
+      if new_record?
+        results = insert!
+      else
+        results = update!
+      end
+
+      @old_attributes = @attributes.dup
+
+      results
+    end
+
+
     def self.inherited(klass)
     end
 
@@ -21,10 +47,12 @@ module MiniActiveRecord
     end
 
     def self.filename
+
       @filename
     end
 
     def self.connection
+
       @connection
     end
 
@@ -36,22 +64,27 @@ module MiniActiveRecord
     end
 
     def self.connected?
+
       !self.connection.nil?
     end
 
     def self.attribute_names
+
       @attribute_names
     end
 
     def self.attribute_names=(attribute_names)
+
       @attribute_names = attribute_names
     end
 
     def self.last_insert_row_id
+
       MiniActiveRecord::Model.connection.last_insert_row_id
     end
 
     def valid_attribute?(attribute)
+
       self.class.attribute_names.include? attribute
     end
 

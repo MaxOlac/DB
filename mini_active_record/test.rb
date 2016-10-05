@@ -15,7 +15,9 @@ assert chef[:first_name] == 'Eduardo'
 assert chef[:last_name] == 'Fernández'
 chef[:first_name] = 'Hector'
 assert chef[:first_name] == 'Hector'
-#p Chef.all
-#p Meal.all
+p "="*70
+p Chef.all
+p "="*70
+p Meal.all
 
 puts "finished"

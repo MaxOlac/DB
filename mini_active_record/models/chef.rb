@@ -27,51 +27,21 @@ class Chef < MiniActiveRecord::Model
 
   attr_reader :attributes, :old_attributes
 
-  # e.g., Chef.new(id: 1, first_name: 'Steve', last_name: 'Rogers', ...)
   def initialize(attributes = {})
-    attributes.symbolize_keys!
-    raise_error_if_invalid_attribute!(attributes.keys)
 
-    # This defines the value even if it's not present in attributes
-    @attributes = {}
-
-    Chef.attribute_names.each do |name|
-      @attributes[name] = attributes[name]
-    end
-
-    @old_attributes = @attributes.dup
-  end
-  #probado
-  def save
-    if new_record?
-      results = insert!
-    else
-      results = update!
-    end
-
-    # When we save, remove changes between new and old attributes
-    @old_attributes = @attributes.dup
-
-    results
+    super(attributes,Chef.attribute_names)
   end
 
-  # We say a record is "new" if it doesn't have a defined primary key in its
-  # attributes
-  #probado
   def new_record?
 
     self[:id].nil?
   end
 
-  # e.g., chef[:first_name] #=> 'Steve'
-  #probado
   def [](attribute)
     raise_error_if_invalid_attribute!(attribute)
     @attributes[attribute]
   end
 
-  # e.g., chef[:first_name] = 'Steve'
-  #probado
   def []=(attribute, value)
     raise_error_if_invalid_attribute!(attribute)
     @attributes[attribute] = value
