@@ -1,19 +1,25 @@
 class TasksController
+
   def initialize(args)
     @view = TasksView.new
-    cotrol(args)
+    @args = args
+    control(@args[0])
   end
+
   def control(option)
     case option
     when "index"
       index
+    when "create"
+      create
     else
       @view.error
     end
   end
+
   def index
-    task = Task.find(1)
-    @view.index(task.task)
+    todo = Task.pluck(:task)
+    @view.index(todo)
   end
 
   def add

@@ -2,8 +2,12 @@ class TasksView
 # Recuerda que la única responsabilidad de la vista es desplegar data al usuario
 
 	def index(thing)
-    p thing
-	end
+    count = 1
+    thing.each do |task|
+      print "#{count}. #{task}\n"
+      count+=1
+    end
+  end
 
   def create
   end
