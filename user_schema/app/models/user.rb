@@ -16,7 +16,7 @@ class User < ActiveRecord::Base
 
   def olderThan
     
-    errors.add(:birthday,"need 18") if birthday.year >1998
+    errors.add(:birthday,"need 18") if birthday.year > 1998
   end
 
 end

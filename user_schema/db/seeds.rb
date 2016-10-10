@@ -1,7 +1,7 @@
 module UserSeeds
   def self.import(filename=File.dirname(__FILE__) + "/../users.csv")
     field_names = nil
-    User.transaction do
+     User.transaction do
       File.open(filename).each do |line|
         data = line.chomp.split(',')
         if field_names.nil?
